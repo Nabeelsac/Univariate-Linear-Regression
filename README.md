@@ -1,4 +1,6 @@
 # Implementation of Univariate Linear Regression
+# NAME: Nather Nabeel S A C
+# REG.NO: 212224100040
 ## Aim:
 To implement univariate Linear Regression to fit a straight line using least squares.
 ## Equipment’s required:
@@ -7,50 +9,53 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Algorithm:
 1.	Get the independent variable X and dependent variable Y.
 2.	Calculate the mean of the X -values and the mean of the Y -values.
-3.	Find the slope m of the line of best fit using the formula.
+3.	Find the slope m of the line of best fit using the formula. 
+
  ![eqn1](./eq1.jpg)
+
 4.	Compute the y -intercept of the line by using the formula:
+
 ![eqn2](./eq2.jpg)  
+
 5.	Use the slope m and the y -intercept to form the equation of the line.
 6.	Obtain the straight line equation Y=mX+b and plot the scatterplot.
 ## Program
 ```
-
+## Program to develop to implement univariate Linear Regression to fit a straight line using least squares.
+Developed by : Nather Nabeel S A C
+Register no : 212224100040
+```
+```
 import numpy as np
 import matplotlib.pyplot as plt
-X=np.array([2, 3, 5, 7, 9])
-Y=np.array([4, 5, 7, 10, 15] )
-num=0
-deno=0
-X_mean=np.mean(X)
-Y_mean=np.mean(Y)
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  deno+=(X[i]-X_mean)**2
-m=num/deno
-b=Y_mean-m*X_mean
-print(m,b)
-Y_pred=m*X+b
-print(Y_pred)
-
-plt.scatter(X,Y,color="red")
-plt.plot(X,Y_pred)
-plt.xlabel("Hour of Sunshine")
-plt.ylabel("Ice Cream sold")
+x = np.array([0,1,2,3,4,5,6,7,8,9])
+y = np.array([1,3,2,5,7,8,8,9,10,12])
+plt.scatter(x,y)
 plt.show()
-
-
-
-
-
+xmean = np.mean(x)
+ymean = np.mean(y)
+num=0
+den=0
+for i in range(len(x)):
+    num+=(x[i]-xmean)*(y[i]-ymean)
+    den+=(x[i]-xmean)**2
+m = num/den
+b = ymean - m*xmean
+print(m,b)
+ypred = m*x+b
+print(ypred)
+plt.scatter(x,y,color='Red')
+plt.plot(x,ypred,color='Blue')
+plt.show()
 
 ```
 ## Output
 
-<img width="732" height="549" alt="image" src="https://github.com/user-attachments/assets/d2c41b35-6be0-4a4a-8fa5-ccba39267bdf" />
+<img width="899" height="596" alt="image" src="https://github.com/user-attachments/assets/37d0a247-4070-4090-b9c2-50eb82290793" />
 
-<img width="941" height="507" alt="image" src="https://github.com/user-attachments/assets/735f99a1-97b4-4217-89f0-025f56be8181" />
+</br>
 
+<img width="542" height="415" alt="image" src="https://github.com/user-attachments/assets/dac71fc1-fc16-406c-bb73-24dcd2826a5b" />
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
